@@ -1,7 +1,4 @@
 # ansible-playbook-rails-mac
-====
-
-Overview
 
 ## Description
 Mac OS X に rbenv, ruby-build, ruby, rails をインストールするansible playbookです。
@@ -9,23 +6,23 @@ Mac OS X に rbenv, ruby-build, ruby, rails をインストールするansible p
 ## Requirement
 ### homebrew
 
-'''
-xcode-select --install
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-'''
+```
+$ xcode-select --install
+$ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
 途中でパスワードの入力が必要です。
 
 ### Ansible
 
-'''
-brew install ansible
-'''
+```
+$ brew install ansible
+```
 
 ## Usage
 
-'''
-git clone git@github.com:KaitoWatanabe/ansible-playbook-rails-mac.git
-cd ansible-playbook-rails-mac
-ansible-playbook playbook.yml -i hosts
-'''
+```
+$ git clone git@github.com:KaitoWatanabe/ansible-playbook-rails-mac.git
+$ cd ansible-playbook-rails-mac
+$ ansible-playbook playbook.yml -i hosts
+```
