@@ -13,6 +13,10 @@
     - hnakamur.homebrew-packages
 
   tasks:
+    - name: write rbenv path
+      shell: echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    - name: reload .bash_profile
+      shell: source ~/.bash_profile
     - name: check whether a specific version of ruby is installed or not
       shell: rbenv versions | grep {{ ruby_version }}
       register: ruby_installed
@@ -22,12 +26,6 @@
       when: ruby_installed|failed
     - name: set ruby version global
       command: rbenv global {{ruby_version}}
-      when: ruby_installed|failed
-    - name: write rbenv path
-      shell: echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
-      when: ruby_installed|failed
-    - name: reload .bash_profile
-      shell: source ~/.bash_profile
       when: ruby_installed|failed
     - name: install bundler gem
       command: gem install bundler --no-ri --no-rdoc

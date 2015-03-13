@@ -4,10 +4,16 @@
 Mac OS X に rbenv, ruby-build, ruby, rails をインストールするansible playbookです。
 
 ## Requirement
-### homebrew
+
+### xcode-select
 
 ```
 $ xcode-select --install
+```
+
+### homebrew
+
+```
 $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
