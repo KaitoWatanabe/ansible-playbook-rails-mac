@@ -9,14 +9,6 @@
       - { name: rbenv }
       - { name: ruby-build }
 
-  pre_tasks:
-    - command: brew -v
-      ignore_errors: true
-      register: brew_exist
-    - name: 'homebrew: install'
-      shell: 'ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" '
-      when: brew_exist|failed
-
   roles:
     - hnakamur.homebrew-packages
 
@@ -39,5 +31,9 @@
       when: ruby_installed|failed
     - name: install bundler gem
       command: gem install bundler --no-ri --no-rdoc
+    - name: rbenv rehash
+      command: rbenv rehash
+    - name: install rails gem
+      command: gem install rails --no-ri --no-rdoc
     - name: rbenv rehash
       command: rbenv rehash
