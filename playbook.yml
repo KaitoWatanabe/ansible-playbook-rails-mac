@@ -4,7 +4,7 @@
   gather_facts: no
   sudo: no
   vars:
-    ruby_version: 2.1.2
+    ruby_version: 2.2.1
     homebrew_packages_packages:
       - { name: rbenv }
       - { name: ruby-build }
